@@ -1,24 +1,29 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, request, render_template
 import requests
-import re
-import time
-import os
 
 app = Flask(__name__)
 
-def make_request(url, headers, cookies):
-    try:
-        response = requests.get(url, headers=headers, cookies=cookies).text
-        return response
-    except requests.RequestException as e:
-        return str(e)
+def get_profile_name(access_token):
+    url = "https://graph.facebook.com/me"
+    params = {'access_token': access_token}
+    response = requests.get(url, params=params)
+    data = response.json()
+    if 'name' in data:
+        return data['name']
+    return None
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    profile_name = None
+    error_message = None
+
     if request.method == 'POST':
-        password = request.form['password']
-        if password == "PRINCE":
-            return redirect(url_for('dashboard'))
-        else:
-            return render_template('index.html', error="Incorrect Password! Try again.")
-    return render_template('index.html')
+        access_token = request.form['access_token']
+        profile_name = get_profile_name(access_token)
+        if profile_name is None:
+            error_message = "Invalid access token. Please try again."
+
+    return render_template('index.html', profile_name=profile_name, error_message=error_message)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
