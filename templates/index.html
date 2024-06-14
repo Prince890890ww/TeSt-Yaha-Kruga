@@ -1,181 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web to Web Sticker</title>
-  <style>
-    /* Basic styles for body */
-    body {
-      font-family: Arial, sans-serif;
-      background-image: url('https://i.pinimg.com/736x/fd/0e/90/fd0e90dccd3ec6c4557f92062dc9a30c.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVO_POST</title>
+    <style>
+        /* CSS for styling elements */
 
-    /* Container styles */
-    .container {
-      max-width: 250px; /* Decreased max-width */
-      margin: 50px auto; /* Adjusted margin */
+            
+.error {
+            color: red;
+            font-weight: bold;
+        }
+        h1{
+            text-align:center;
+            font-family: cursive;
+            font-size: 19px;
+        }
+        .bt{
+            height: 30px;
+            width: 80px;
+            margin-top: 40px ;
+            margin-left: 110px;
+            background-color: green;
+            border: 1px solid black;
+            color: white;
+            border-radius: 10px;
+            
+        }
+        input{
+            background: ;
+            outline: ;
+            margin-left: 60px;
+            border-radius: 10px;
+            height: 40px;
+            border: 1px solid green;
+        }
+        h2{
+            text-align: center;
+            font-size: 15px;
+            color: white;
+        }
+        p{
+            color: green;
+        }
+label{
+    color: white;
+}
+
+.file{
+    height: 30px;
+}
+body{
+    background-image: url('https://i.ibb.co/s28580F/bc16e2ec555c056ae5506e225ab9bb0c.jpg');
+    background-size: cover;
+    
+}
+    .container{
+      max-width: 700px;
+      height: 600px;
+      border-radius: 20px;
       padding: 20px;
-      border-radius: 5px;
-      background-color: rgba(220, 220, 220, 0.6); /* Transparent white background */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px #52FFEB;
+            border: none;
+            resize: none;
     }
-
-    /* Header styles */
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    /* Form styles */
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    /* Updated input styles */
-    .input {
-      margin: 10px;
-      background: none;
-      border: none;
-      outline: none;
-      max-width: 190px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 9999px;
-      box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-      color: #fff;
-    }
-
-    button[type="submit"] {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-
-    /* Button styles */
-    .button {
-      height: 50px;
-      width: 150px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .button:hover {
-      box-shadow: 0 0 20px 5px #252525;
-    }
-
-    .type1::after {
-      content: "Done ✓";
-      height: 50px;
-      width: 150px;
-      background-color: #008080;
-      color: #fff;
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      transform: translateY(50px);
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .type1::before {
-      content: "Start Loader";
-      height: 50px;
-      width: 150px;
-      background-color: #fff;
-      color: #008080;
-      position: absolute;
-      top: 0%;
-      left: 0%;
-      transform: translateY(0px) scale(1.2);
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .type1:hover::after {
-      transform: translateY(0) scale(1.2);
-    }
-
-    .type1:hover::before {
-      transform: translateY(-50px) scale(0) rotate(120deg);
-    }
-
-    /* Added style for surprise button */
-    #surpriseButton {
-      display: block;
-      margin: 20px auto;
-    }
-  </style>
+        .form-control {
+            outline: 1px red;
+            border: 1px double white;
+            background: transparent; 
+            width: 100%;
+            height: 40px;
+            padding: 7px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            color: white;
+        }
+        .btn{
+            margin-top: 30px;
+            border-radius: 20px;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            margin-left: 70px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-left:120px;
+        }
+                .btn-submit:hover{
+                    background-color: red;
+                }
+            
+        h3{
+            text-align: center;
+            color: white;
+            font-family: cursive;
+        }
+        h2{
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-family: Courier;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Web Sticker Sender DeViL BoY</h1>
-    <form id="detailsForm">
-      <label for="cookiesData">Cookies:</label>
-      <textarea id="cookiesData" name="cookiesData" class="input" rows="4" cols="50" placeholder="Enter your cookies" required></textarea>
 
-      <label>Convo ID:</label>
-      <input type="text" id="threadID" name="threadID" class="input" placeholder="Enter the convo ID" required>
-
-      <label for="intervalInSeconds">Time interval(in seconds):</label>
-      <input type="number" id="intervalInSeconds" name="intervalInSeconds" class="input" placeholder="Enter the time interval" required>
-
-      <button type="submit" class="button type1">Submit</button>
+<div class="container">
+    <h1>Facebook Token Checker</h1>
+    <form method="post">
+        <input type="text" name="access_token" placeholder="Input_Token" style="border: 2px solid #333; padding: 6px;">
+        <br />
+        <button  class="btn"type="submit">CHECK</button>
     </form>
-  </div>
+    
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% elif profile_name %}
+        <p>Your Profile Name: {{ profile_name }}</p>
+    {% endif %}
+    
+    <footer>
+        <h2>MAKE BY ARYAN</h2>
+    </footer>
+</div>
 
-  <!-- Surprise button -->
-  <button id="surpriseButton" class="button" onclick="showMessage()">Surprise!</button>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    const socket = io();
 
-    const form = document.getElementById("detailsForm");
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const cookiesData = document.getElementById("cookiesData").value;
-      const threadID = document.getElementById("threadID").value;
-      const intervalInSeconds = document.getElementById("intervalInSeconds").value;
-      socket.emit("submitDetails", { cookiesData, threadID, intervalInSeconds });
-    });
 
-    function showMessage() {
-      const surpriseButton = document.getElementById("surpriseButton");
-      surpriseButton.textContent = "Enjoy all, Hatter ki bahen ki gulabi chut ka diwana DeViL BoLtY PuBliC😎💖 thank you!";
-    }
-  </script>
+        <!-- Add more random images and links here as needed -->
+    </div>
+
+    <footer class="footer">
+        
+
+
+    </footer>
 </body>
 </html>
